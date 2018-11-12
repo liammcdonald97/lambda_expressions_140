@@ -24,20 +24,25 @@ namespace lambda_expressions_140
             list1.Add(new Employee() { firstName = "Jack", lastName = "Johnson", id = 10 });
 
             //foreach loop that creates a new list of employees with the first name "Joe"
+            List<Employee> list2 = new List<Employee>();
             foreach (Employee employee in list1)
             {
-                if(employee.firstName == "Joe")
-                {
-                    List<Employee> list2 = new List<Employee>();
+                
+                if (employee.firstName == "Joe")
+                {                 
                     list2.Add(new Employee());
-                }
+                }              
             }
+            Console.WriteLine(list2.Count);
             
+
             //lambda expression that creates a new list of employees with the first name "Joe"
             List<Employee> list3 = list1.Where(x => x.firstName == "Joe").ToList();
+            Console.WriteLine(list3.Count);
 
             //lambda expression that creates a new list of all employees with an Id number greater than 5
             List<Employee> list4 = list1.Where(x => x.id > 5).ToList();
+            Console.WriteLine(list4.Count);
 
             Console.ReadLine();
         }
